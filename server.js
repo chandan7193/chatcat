@@ -2,15 +2,13 @@
 
 const express = require('express');
 const app =express();
+const chatCat = require('./app');
+
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
-app.get('/',(req,res,next)=>{
-    
-    res.render('login',{
-        pageTitle:'My Login Page'
-    });
-});
+app.use('/', chatCat.router);
 
 app.listen(app.get('port'),() =>{
     console.log('Chatcat Running on Port', app.get('port'));
