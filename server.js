@@ -1,7 +1,7 @@
 "use strict"
 
 const express = require('express');
-const app =express();
+const app = express();
 const chatCat = require('./app');
 
 app.set('port', process.env.PORT || 3000);
