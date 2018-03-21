@@ -1,6 +1,6 @@
 'use strict';
 const h = require('../helpers');
-console.log(h);
+
 
 module.exports=()=>{
     let routes = {
@@ -17,10 +17,11 @@ module.exports=()=>{
         },
         'post':{
 
-        }       
-
+        } ,
+        'NA':(req,res,next)=>{
+            res.status(404).render('404');
+        }      
     }
  
-
     return h.route(routes);
 }
