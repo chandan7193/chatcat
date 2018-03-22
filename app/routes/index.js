@@ -14,6 +14,7 @@ module.exports=()=>{
             '/chat':(req,res,next)=>{
                 res.render('chatroom');
             },
+          
         },
         'post':{
 
